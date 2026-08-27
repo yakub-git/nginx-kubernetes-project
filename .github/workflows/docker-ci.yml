@@ -19,5 +19,8 @@ jobs:
       - name: Run Nginx container
         run: docker run -d -p 8081:80 --name nginx-test nginx-devops-project:ci
 
+      - name: Wait for Nginx
+        run: sleep 5
+
       - name: Test Nginx application
         run: curl --fail http://localhost:8081
